@@ -938,6 +938,9 @@ class ZCatalog(Folder, Persistent, Implicit):
                 '/manage_catalogReport?manage_tabs_message=' +
                 'Long%20query%20time%20changed')
 
+    def manage_convertIndexes(self, REQUEST=None, RESPONSE=None, URL1=None):
+        pass
+
 InitializeClass(ZCatalog)
 
 

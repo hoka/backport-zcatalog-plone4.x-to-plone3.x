@@ -22,6 +22,7 @@ from types import *
 from logging import getLogger
 from Globals import Persistent, DTMLFile
 
+from Globals import InitializeClass
 from Acquisition import Implicit
 from OFS.SimpleItem import SimpleItem
 from BTrees.IOBTree import IOBTree
@@ -77,6 +78,8 @@ class TextIndex(Persistent, Implicit, SimpleItem):
     This isn't exactly how things are represented in memory, many
     optimizations happen along the way.
     """
+
+    implements(ITextIndex)
 
     meta_type='TextIndex'
 
@@ -652,6 +655,7 @@ class TextIndex(Persistent, Implicit, SimpleItem):
     manage_main._setName('manage_main')
     manage_vocabulary = DTMLFile("dtml/manageVocabulary",globals())
 
+InitializeClass(TextIndex)
 
 def parse(s):
     """Parse parentheses and quotes"""

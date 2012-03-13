@@ -237,7 +237,7 @@ class IIndexConfiguration(Interface):
             The interface does not define any specifc mapping keys.
         """
 
-class ITextIndex(Interface):
+class ITextIndex(IPluggableIndex):
 
     """Full-text index.
 
@@ -260,7 +260,7 @@ class ITextIndex(Interface):
     def getLexicon(vocab_id=None):
         """Get the Lexicon in use.
         """
-        
+
 class IVocabulary(Interface):
 
     """A Vocabulary is a user-managable realization of a Lexicon object.
